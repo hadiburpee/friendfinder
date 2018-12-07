@@ -125,24 +125,31 @@
         event.preventDefault();
         var newScores = [];
         for(i=1; i<11; i++){
-            newScores.push($("#q" + i).val());
+            var num = parseInt($("#q" + i).val());
+            console.log(num);
+            newScores.push(parseInt(num));
         }
         // console.log(newScores);
    
         var newPerson = {
             name: $("#fullname").val().trim(),
             photo: $("#pictureLink").val().trim(),
-            scores: []
+            scores: newScores
         }
-        newPerson.scores = newScores;
-        console.log(newPerson);
+        // newPerson.scores = newScores;
+        // console.log(newPerson);
         
-        $.ajax( { url: "/api/friends", method: "POST" }).then(function(){
-            newPerson;
+        $.post("/api/friends", newPerson).then(function(data){
+            console.log(data);
+            $.ajax({url: "/api/friends", method: "GET"})
+            .then(function(matchdata){
+                console.log(matchdata);
+            })
         });
 
-    });
+        
 
+    });
 
 
 </script> 
