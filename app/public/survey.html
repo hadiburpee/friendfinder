@@ -1,4 +1,4 @@
-<!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,9 +6,143 @@
     <title><Page Title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
     <h1>Survey</h1>
+<form>
+    <p id="fullname">Enter your name (Required): <input type="text"></p>
+    <p id="pictureLink">Enter a link to your picture (Required): <input type="text"></p>
+
+</form>
+
+    <h3>Q1: Do you like pineapples?</h3>
+    <select id="q1">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+    
+    <h3>Q2: Do you like apples?</h3>
+    <select id="q2">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+     
+    <h3>Q3: Do you like the Dodgers?</h3>
+    <select id="q3">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+
+     
+    <h3>Q4: Do you like web-development?</h3>
+    <select id="q4">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+
+     
+    <h3>Q5: Do you like going to the movies?</h3>
+    <select id="q5">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+
+     
+    <h3>Q6: Do you like going to museums?</h3>
+    <select id="q6">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+
+     
+    <h3>Q7: Do you like Christmas?</h3>
+    <select id="q7">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+
+     
+    <h3>Q8: Do you like traveling?</h3>
+    <select id="q8">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+
+     
+    <h3>Q9: Do you like surfing?</h3>
+    <select id="q9">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+
+
+    <h3>Q10: Do you like getting cavities filled?</h3>
+    <select id="q10">
+        <option value="1">1 Strongly Disagree</option>
+        <option value="2">2 Disagree</option>
+        <option value="3">3 Indifferent</option>
+        <option value="4">4 Agree</option>
+        <option value="5">5 Strongly Agree</option>
+    </select>
+    <p></p>
+        <button id="surveybutton" type="button">Submit Survey</button>
+    <ul>
+        <a href="/api/friends">API Friends List</a> | <a href="https://github.com/hadiburpee/friendfinder">Github Repo</a>
+    </ul>
+
+<script type="text/javascript">
+
+    $("#surveybutton").on("click", function(event){
+        event.preventDefault();
+        var newScores = [];
+        for(i=1; i<11; i++){
+            newScores.push($("#q" + i).val());
+        }
+        // console.log(newScores);
+
+        var newPerson = {
+            name: $("#fullname").val().trim(),
+            photo: $("#pictureLink").val().trim(),
+            scores: []
+        }
+        newPerson.scores = newScores;
+
+        console.log(newPerson);
+
+    });
+
+
+</script> 
+
+
 </body>
 </html>
