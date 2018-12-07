@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><Page Title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen"/>
 
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
-    <h1>Survey</h1>
+    <h1>Find a Friend</h1>
 <form>
     <p id="fullname">Enter your name (Required): <input type="text"></p>
     <p id="pictureLink">Enter a link to your picture (Required): <input type="text"></p>
@@ -128,17 +128,21 @@
             newScores.push($("#q" + i).val());
         }
         // console.log(newScores);
-
+   
         var newPerson = {
             name: $("#fullname").val().trim(),
             photo: $("#pictureLink").val().trim(),
             scores: []
         }
         newPerson.scores = newScores;
-
         console.log(newPerson);
+        
+        $.ajax( { url: "/api/friends", method: "POST" }).then(function(){
+            newPerson;
+        });
 
     });
+
 
 
 </script> 
