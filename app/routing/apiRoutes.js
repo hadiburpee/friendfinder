@@ -72,42 +72,6 @@ module.exports = function(app) {
         if(match === comp5){
             console.log("you match with " + friends[4].name);
         }
-
-        
-        
-        
-        
-        
-        
-        
-        // console.log(friendScore);
-        // console.log(score1);
-        // console.log(score2);
-        // console.log(score3);
-        // console.log(score4);
-        // console.log(score5);
-        // console.log(intScores);
-        // console.log(friends[3].scores);
-
-        // var scoreFriend;
-        
-
-        
-
-        // for(i=0; i<10; i++){
-        //     scoreFriend += intScores[i];            
-        //     score1 += friends[0].scores[i];
-        //     score2 += friends[1].scores[i];
-        //     score3 += friends[2].scores[i];
-        //     score4 += friends[3].scores[i];
-        //     score5 += friends[4].scores[i];
-        //     console.log(score1);
-        // }
-        // // console.log(score1);
-
-
-
     });
-
 }
 
